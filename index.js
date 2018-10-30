@@ -23,10 +23,11 @@ const divs = document.querySelectorAll('div')
 console.log(divs)
 
 function onDivClick(event){
+  event.stopPropogation()
   console.log(this.firstChild.nodeValue.trim() + ' bubbled')
 }
 
-event.stopPropogation()
+
 
 for (let div of divs) {
   div.addEventListener('click',onDivClick)
